@@ -33,6 +33,10 @@ android {
     }
 }
 
+ext{
+    logging_interceptor_version = "4.9.0"
+}
+
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -50,4 +54,9 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer:2.10.8'
 
     implementation 'org.videolan.android:libvlc-all:3.3.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+
 }
