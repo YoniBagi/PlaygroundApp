@@ -12,7 +12,7 @@ import retrofit2.http.*
 
 class NetworkManager {
     companion object {
-        private const val BASE_URL = "http://192.168.1.187/bha-api/"
+        private const val BASE_URL = "http://192.168.20.17/bha-api/"
 
         val instanceServiceApi: ServiceApi by lazy {
             val interceptor = HttpLoggingInterceptor()
@@ -35,12 +35,11 @@ interface ServiceApi {
 
     //const val PATH_AUDIO_TRANSMIT = "http://192.168.1.187/bha-api/audio-transmit.cgi?http-user=ghfpgs0001&http-password=m6VDJxHZdH"
     @Multipart
-    @Headers( "Content-Type: audio/basic",
+/*    @Headers( "Content-Type: audio/basic",
             "Content-Length: 9999999",
             "Connection: Keep-Alive",
-            "Cache-Control: no-cache")
+            "Cache-Control: no-cache")*/
     @POST("audio-transmit.cgi?http-user=ghfpgs0001&http-password=m6VDJxHZdH")
     //fun fetchRaw(): Call<ResponseBody>
-    //fun upload(@Part part: MultipartBody.Part): Call<ResponseBody>
     fun upload(@Part part: MultipartBody.Part): Call<ResponseBody>
 }
